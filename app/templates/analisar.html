@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Avaliar Necessidades de Compras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Avaliar Necessidades de Compras</h1>
+    <form method="post">
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" name="marca" placeholder="Digite a marca">
+        <br>
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" placeholder="Digite o código">
+        <br>
+        <label for="dias">Dias para Abastecimento do Estoque:</label>
+        <input type="number" id="dias" name="dias" min="1" max="180" placeholder="1-180">
+        <br>
+        <button type="submit">Processar</button>
+    </form>
+    <a href="{{ url_for('index') }}">Voltar</a>
+</body>
+</html>
