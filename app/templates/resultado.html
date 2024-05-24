@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado da Análise de Compras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Resultado da Análise de Compras</h1>
+    <table>
+        <tr>
+            <th>Produto</th>
+            <th>Descrição</th>
+            <th>Marca</th>
+            <th>Qtd. Necessária</th>
+        </tr>
+        {% for resultado in resultados %}
+        <tr>
+            <td>{{ resultado.Produto }}</td>
+            <td>{{ resultado.Descrição }}</td>
+            <td>{{ resultado.Marca }}</td>
+            <td>{{ resultado['Qtd. Necessária'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('analisar') }}">Voltar</a>
+</body>
+</html>
